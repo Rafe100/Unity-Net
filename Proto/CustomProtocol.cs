@@ -34,23 +34,6 @@ namespace CustomProtocol
       { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
   }
   
-  [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"MsgGHomeLoginReq")]
-  public partial class MsgGHomeLoginReq : global::ProtoBuf.IExtensible
-  {
-    public MsgGHomeLoginReq() {}
-    
-    private string _ticket;
-    [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"ticket", DataFormat = global::ProtoBuf.DataFormat.Default)]
-    public string ticket
-    {
-      get { return _ticket; }
-      set { _ticket = value; }
-    }
-    private global::ProtoBuf.IExtension extensionObject;
-    global::ProtoBuf.IExtension global::ProtoBuf.IExtensible.GetExtensionObject(bool createIfMissing)
-      { return global::ProtoBuf.Extensible.GetExtensionObject(ref extensionObject, createIfMissing); }
-  }
-  
   [global::System.Serializable, global::ProtoBuf.ProtoContract(Name=@"MsgClientLoginRsp")]
   public partial class MsgClientLoginRsp : global::ProtoBuf.IExtensible
   {

@@ -7,10 +7,6 @@ message MsgClientTestLoginReq
     required string passwd  = 2;
 }
 
-message MsgGHomeLoginReq
-{
-    required string ticket = 1;
-}
 
 message MsgClientLoginRsp
 {
