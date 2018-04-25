@@ -1,0 +1,35 @@
+syntax = "proto2";
+package CustomProtocol;
+
+message MsgClientTestLoginReq
+{
+    required string account = 1;
+    required string passwd  = 2;
+}
+
+message MsgGHomeLoginReq
+{
+    required string ticket = 1;
+}
+
+message MsgClientLoginRsp
+{
+    optional int32 rsp_head  = 1;
+    optional int64   user_id   = 2;
+    optional string  token     = 3;
+    optional string  gate_ip   = 4;
+    optional int32   gate_port = 5;
+}
+
+
+
+
+message HeartBeat
+{
+	
+}
+
+message Empty
+{
+
+}
