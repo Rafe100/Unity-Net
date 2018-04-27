@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using CustomProtocol;
+using System;
 
 public class JWTTest : MonoBehaviour {
 
@@ -25,7 +26,7 @@ public class JWTTest : MonoBehaviour {
             MsgClientTestLoginReq req = new MsgClientTestLoginReq();
             req.account = "zz";
             req.passwd = "123";
-            NetWorkManager.Instance.JustSend(req);
+            NetWorkManager.Instance.LoginTestReq("tt", "123") ;
         }
 
         if (Input.GetKeyDown(KeyCode.C))

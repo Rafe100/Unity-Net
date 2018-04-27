@@ -28,7 +28,7 @@ public class NetWorkManager : MonoSingleton<NetWorkManager> {
     /// <param name="msg"></param>
     /// <param name="isSync">是否需要同步</param>
     /// <param name="syncMsgId">需要同步的情况，服务器返回消息id</param>
-    void SendMessage(object msg,bool isSync = false,UInt16 syncMsgId = UInt16.MinValue)
+     void SendMessage(object msg,bool isSync = false,UInt16 syncMsgId = UInt16.MinValue)
     {
         ReqMessage req = new ReqMessage();
         req.Message = msg;
@@ -133,6 +133,8 @@ public class NetWorkManager : MonoSingleton<NetWorkManager> {
     public void LoginTestRsp(ReceiveData rspObj)
     {
         loginServerRsp = rspObj.MsgObject as MsgClientLoginRsp;
+        Debug.Log("LoginTestRsp :" + loginServerRsp.user_id + "[]" + loginServerRsp.token + "[]" +
+            loginServerRsp.gate_ip + "[]" + loginServerRsp.gate_port);
         this._netClient.Disconnect();
         this._netClient.OnConnected = ConnectGateServer;
 

@@ -174,7 +174,14 @@ public class NetClient : IDisposable {
 
     public void Disconnect()
     {
-        this._socket.Shutdown(SocketShutdown.Both);
+        try
+        {
+            this._socket.Shutdown(SocketShutdown.Both);
+        }
+        catch(Exception e)
+        {
+            Debug.Log("netclient disconnect exception:" + e.ToString());
+        }
         this._socket.Close();
         this._socket = null;
         this._protocol.Disconnect();
