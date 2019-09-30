@@ -1,0 +1,28 @@
+syntax = "proto2";
+package CustomProtocol;
+
+message PlayerConnectReq
+{
+    required string playName= 1;
+}
+
+
+message PlayerConnectRsp
+{
+ 	required int32 playId= 1;
+	required int32 udpPort= 2;
+}
+
+message Vec3
+{
+	required int32 x = 1;
+	required int32 y = 2;
+	required int32 z = 3;
+}
+
+message PlayerFrame
+{
+	required int32 Tick = 1;
+	required Vec3 Pos = 2;
+	required int32 PlayerId = 3;
+}
